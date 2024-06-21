@@ -57,4 +57,46 @@ Créer un dossier en le nommant lionel.lemarchand
 
 ![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20101015.png?raw=true)
 
+# Partie 2 : Restriction utilisateurs
 
+## Q.1.2.1 Faire en sorte que l'utilisateur Gabriel Ghul ne puisse se connecter que du lundi au vendredi, de 7h à 17h.
+
+Trouverl'utilsateur Gabriel Ghul avec la fonction Find comme auparavant, clic droit Properties puis Account puis cliquer sur Logon Hours pour choisr ses horaire de connection de 7h à 17h du lundi au vendredi
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20101642.png?raw=true)
+
+## Q.1.2.2 De même, bloquer sa connexion au seul ordinateur CLIENT01.
+
+Toujours dans Account cliquer sur Log On To et taper CLIENT01 puis Add et ensuite OK
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20101751.png?raw=true)
+
+Ne pas oublier de faire Apply avant de fermer la fenêtre Properties pour éviter la non prise en compte des changements
+
+## Q.1.2.3 Mettre en place une stratégie de mot de passe pour durcir les comptes des utilisateurs de l'OU LabUsers.
+
+Depuis le serveur manager cliquer sur Tools puis Group Policy Management
+
+Créer un GPO dans LabUsers, ici je vais l'appeller Password_Rules
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20102303.png?raw=true)
+
+Edit cette GPO en allant dans Computer Configuration / Policies / Windows Settings / Security Settings / Account Policies / Password Policy
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20102618.png?raw=true)
+
+Ici je vais modifier le Minimum password length en mettant 12 caractères et en cochant Define this policy settings et ensuite Apply
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20102855.png?raw=true)
+
+Ainsi que le Password must meet complecity requirements en cochant Define this policy setting et Enable et ensuite Apply
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20103109.png?raw=true)
+
+Pour vérifier on peut aller sur la GPO créé puis Settings cliquer sur Show all et on voit les regles mise en place
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20103233.png?raw=true)
+
+# Partie 3 : Lecteurs réseaux
+
+## Q.1.3.1 Créer une GPO Drive-Mount qui monte les lecteurs E: et F: sur les clients.
