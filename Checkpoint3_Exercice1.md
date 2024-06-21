@@ -101,7 +101,7 @@ Pour vérifier on peut aller sur la GPO créé puis Settings cliquer sur Show al
 
 ## Q.1.3.1 Créer une GPO Drive-Mount qui monte les lecteurs E: et F: sur les clients.
 
-Commencer par rendre les deux lescteur partager sur le réseau
+Commencer par rendre les deux lecteurs partagé sur le réseau depuis leur properties / share
 
 Toujours dans la console Group Policy Management mais cette fois dans LabComputers nous allons créer un GPO nommée Drive-Mount
 
