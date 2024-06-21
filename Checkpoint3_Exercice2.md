@@ -2,13 +2,47 @@
 
 ## Q.2.1.1 Sur le serveur, créer un compte pour ton usage personnel.
 
+`adduser alex`
+
+En mot de passe j'ai défini Azerty1* que j'ai du taper 2 fois
+
+Pour le reste j'ai juste taper Enter pour laisser par défaut
+
+Puis j'ai valider en tapant o
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20110118.png?raw=true)
+
 ## Q.2.1.2 Quelles préconisations proposes-tu concernant ce compte ?
+
+Je recommande de lui donner le minimum de droit pour éviter différents problèmes, je pourrais lui donner un mot de passe fort, je pourrais aussi faire une surveillance des logs pour voir les connexion échouées et activité anormale
 
 # Partie 2 : Configuration de SSH
 
 ## Q.2.2.1 Désactiver complètement l'accès à distance de l'utilisateur root.
 
+depuis le compte root taper :
+
+`nano /etc/ssh/sshd_config`
+
+Chercher la ligne PermitRootLogin, la désanoté et mettre no
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20111032.png?raw=true)
+
+Ne pas oublier de faire un :
+
+`systemctl restart ssh`
+
 ## Q.2.2.2 Autoriser l'accès à distance à ton compte personnel uniquement.
+
+Toujours dans le fichier sshd_config j'ai rajouter à la fin:
+
+`AllowUsers alex`
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20111451.png?raw=true)
+
+Ne pas oublier de faire un :
+
+`systemctl restart ssh`
 
 ## Q.2.2.3 Mettre en place une authentification par clé valide et désactiver l'authentification par mot de passe
 
