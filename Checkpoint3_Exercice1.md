@@ -77,7 +77,7 @@ Ne pas oublier de faire Apply avant de fermer la fenêtre Properties pour évite
 
 Depuis le serveur manager cliquer sur Tools puis Group Policy Management
 
-Créer un GPO dans LabUsers, ici je vais l'appeller Password_Rules
+Créer une GPO dans LabUsers, ici je vais l'appeller Password_Rules
 
 ![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20102303.png?raw=true)
 
@@ -100,3 +100,46 @@ Pour vérifier on peut aller sur la GPO créé puis Settings cliquer sur Show al
 # Partie 3 : Lecteurs réseaux
 
 ## Q.1.3.1 Créer une GPO Drive-Mount qui monte les lecteurs E: et F: sur les clients.
+
+Commencer par rendre les deux lescteur partager sur le réseau
+
+Toujours dans la console Group Policy Management mais cette fois dans LabComputers nous allons créer un GPO nommée Drive-Mount
+
+Edit cette GPO an allant dans User Configuration / Preferences / Windows Settings / Drive Maps
+
+Faire un clic droit New -> Mapped Drive
+
+Faire comme l'image ci-dessous
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20104755.png?raw=true)
+
+On fait presque pareil pour F:
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20104933.png?raw=true)
+
+Nous voyons que nos lecteurs sont mappé
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20105012.png?raw=true)
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20105116.png?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
