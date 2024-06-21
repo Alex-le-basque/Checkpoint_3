@@ -119,12 +119,44 @@ il reste 1,79g
 
 ## Q.2.4.1 Expliquer succinctement les rôles respectifs des 3 composants bareos installés sur la VM.
 
+bareos-dir gere et supervise les sauvegarde et restauration
+
+bareos-sd  gere le stockage des données sauvegardé
+
+bareos-fd est agent sur les clients qui sert à la gestion des données à sauvegardé
+
 # Partie 5 : Filtrage et analyse réseau
 
 ## Q.2.5.1 Quelles sont actuellement les règles appliquées sur Netfilter ?
 
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20121230.png?raw=true)
+
 ## Q.2.5.2 Quels types de communications sont autorisées ?
+
+loopback, tcp port 22 (ssh), icmp, icmpv6
 
 ## Q.2.5.3 Quels types sont interdit ?
 
-##Q.2.5.4 Sur nftables, ajouter les règles nécessaires pour autoriser bareos à communiquer avec les clients bareos potentiellement présents sur l'ensemble des machines du réseau local sur lequel se trouve le serveur.
+Tout les autres que ceux cité au dessus par défaut
+
+## Q.2.5.4 Sur nftables, ajouter les règles nécessaires pour autoriser bareos à communiquer avec les clients bareos potentiellement présents sur l'ensemble des machines du réseau local sur lequel se trouve le serveur.
+
+# Partie 6 : Analyse de logs
+
+## Q.2.6.1 Lister les 10 derniers échecs de connexion ayant eu lieu sur le serveur en indiquant pour chacun :
+
+    La date et l'heure de la tentative
+    L'adresse IP de la machine ayant fait la tentative
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20122952.png?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
