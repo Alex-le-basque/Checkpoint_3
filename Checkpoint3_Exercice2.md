@@ -50,13 +50,70 @@ Ne pas oublier de faire un :
 
 ## Q.2.3.1 Quels sont les systèmes de fichiers actuellement montés ?
 
+Nous voyons du linux, ext2, LVM2, et SWAP
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20112535.png?raw=true)
+
 ## Q.2.3.2 Quel type de système de stockage ils utilisent ?
+
+Nous voyons sur l'image ci-dessous le type de stockage sur chaque ligne après type
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20111959.png?raw=true)
 
 ## Q.2.3.3 Ajouter un nouveau disque de 8,00 Gio au serveur et réparer le volume RAID
 
+Nou voyons que l'état du raid est degraded
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20112920.png?raw=true)
+
+On éteint la VM
+On ajoute un nouveau disque de 8GO
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20113104.png?raw=true)
+
+On redémarre la VM
+
+Taper `lsblk` pour voir le nouveau disque sur sdb
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20113605.png?raw=true)
+
+Tape `fdisk /dev/sdb`
+
+Puis n pour nouvelle partition, p pour une partition primaire, trois fois sur Enter pour laisser pas défaut
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20113909.png?raw=true)
+
+Ensuite taper t puis FD pour passer la partition en Linux Raid et w pour quitter
+
+Taper la commande `mdadm --add /dev/md0 /dev/sdb1` pour ajouter la nouvelle partition au raid existant
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20114454.png?raw=true)
+
+Le statut du raid n'est plus en degraded
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20114906.png?raw=true)
+
 ## Q.2.3.4 Ajouter un nouveau volume logique LVM de 2 Gio qui servira à héberger des sauvegardes. Ce volume doit être monté automatiquement à chaque démarrage dans l'emplacement par défaut : /var/lib/bareos/storage.
 
+En tapant la commande `vgs` nous avons les informations suivante:
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20115458.png?raw=true)
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20115710.png?raw=true)
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20120042.png?raw=true)
+
+Taper `nano /etc/fstab`
+
+Ajouter `/dev/cp3-vg/backup /var/lib/bareos/storage ext4 defaults 0 0` à la fin du fichier
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20120355.png?raw=true)
+
 ## Q.2.3.5 Combien d'espace disponible reste-t-il dans le groupe de volume ?
+
+il reste 1,79g
+
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20120521.png?raw=true)
 
 # Partie 4 : Sauvegardes
 
