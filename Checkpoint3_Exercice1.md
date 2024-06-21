@@ -10,21 +10,21 @@ Faire un clic droit sur l'ojet utilisateur Kelly.Rhameur et cliquer sur Copy
 
 Sur la première fenêtre entrer les donnée comme dans l'image ci-dessous
 
-![]()
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20094118.png?raw=true)
 
 Sur la deuxième fenêtre j'entre Azerty1* deux fois pour créé un mot de passe
 
-![]()
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20094311.png?raw=true)
 
 Puis sur la troisième image on confirme la copie en cliquant sur Finish
 
-![]()
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20094443.png?raw=true)
 
 Nous pouvons vérifier graphiquement si les infos ont été copier ou en tapant la commande suivant dans powershell:
 
 `Get-ADUser -Identity "Lionel.Lemarchand" -Properties *`
 
-![]()
+![](https://github.com/Alex-le-basque/Checkpoint_3/blob/main/Ressources/Capture%20d'%C3%A9cran%202024-06-21%20094807.png?raw=true)
 
 
 Q.1.1.2 Créer une OU DeactivatedUsers et déplace le compte désactivé de Kelly Rhameur dedans.
